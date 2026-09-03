@@ -1,4 +1,5 @@
 .commerce-timeline {
+  position: relative;
   width: 100%;
   height: 100dvh;
 }
@@ -100,13 +101,13 @@
   align-items: end;
 }
 
-.commerce-timeline_container_sources {
+.commerce-timeline_sources {
   background: none;
   border: none;
   display: inline-flex;
   column-gap: 8px;
   align-items: center;
-  position: fixed;
+  position: absolute;
   right: 2rem;
   bottom: 1rem;
   font-size: 15px;

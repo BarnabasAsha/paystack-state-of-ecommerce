@@ -120,11 +120,10 @@ export default function CommerceTimeline() {
             ))}
           </div>
         </div>
-
-        <button className={styles["commerce-timeline_container_sources"]}>
-          <span>Sources</span> <ChevronDown />
-        </button>
       </div>
+      <button className={styles["commerce-timeline_sources"]}>
+        <span>Sources</span> <ChevronDown />
+      </button>
       <TimelineDot />
     </section>
   );
