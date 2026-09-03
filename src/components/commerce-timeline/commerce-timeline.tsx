@@ -9,6 +9,32 @@ import ChevronDown from "../chevron-down";
 export default function CommerceTimeline() {
   const phaseRefs = useRef<(HTMLDivElement | null)[]>([]);
   const timelineRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  // Below 820px the layout stacks lcol on top of rcol. lcol's height is
+  // content-driven, so we measure it and feed it back in as a CSS var —
+  // rcol then fills exactly the rest of the section's 100dvh instead of
+  // both fighting over a guessed fixed height.
+  useEffect(() => {
+    const section = sectionRef.current;
+    const lcol = timelineRef.current;
+    if (!section || !lcol) return;
+    if (window.innerWidth >= 820) return;
+
+    const updateLcolHeight = () => {
+      section.style.setProperty(
+        "--mobile-lcol-height",
+        `${lcol.getBoundingClientRect().height}px`,
+      );
+    };
+
+    const observer = new ResizeObserver(updateLcolHeight);
+
+    observer.observe(lcol);
+    updateLcolHeight();
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const timeline = timelineRef.current;
@@ -65,7 +91,11 @@ export default function CommerceTimeline() {
   }, []);
 
   return (
-    <section className={styles["commerce-timeline"]}>
+    <section
+      id="timeline"
+      ref={sectionRef}
+      className={styles["commerce-timeline"]}
+    >
       <div className={styles["commerce-timeline_container"]}>
         <div
           ref={timelineRef}

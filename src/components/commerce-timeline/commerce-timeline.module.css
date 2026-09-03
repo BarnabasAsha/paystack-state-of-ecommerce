@@ -152,7 +152,7 @@
   }
 
   .commerce-timeline_container_rcol {
-    height: calc(100dvh - 72px);
+    height: calc(100dvh - var(--mobile-lcol-height, 80px));
     padding: 30px 20px;
   }
 
