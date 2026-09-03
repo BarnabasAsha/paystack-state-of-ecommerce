@@ -1,3 +1,5 @@
+import styles from "./header.module.css";
+
 export default function Logo() {
   return (
     <svg
@@ -6,6 +8,7 @@ export default function Logo() {
       viewBox="0 0 120 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={styles.header_container_logo}
     >
       <g clipPath="url(#clip0_885_4376)">
         <path

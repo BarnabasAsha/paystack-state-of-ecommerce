@@ -23,6 +23,15 @@
   color: var(--commerce-cream);
 }
 
+.header_container_nav_link:hover {
+  font-weight: 500;
+}
+
+.header_container_logo {
+  position: relative;
+  z-index: 12;
+}
+
 .header_container-mobile {
   display: none;
 }

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { clsx } from "clsx";
-import Logo from "../logo";
+import Logo from "./logo";
 import styles from "./header.module.css";
 
 const links = [
