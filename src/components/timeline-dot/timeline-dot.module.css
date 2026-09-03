@@ -43,3 +43,11 @@
   height: 4px;
   border-radius: 100%;
 }
+
+@media screen and (max-width: 820px) {
+  .timeline-dot {
+    position: absolute;
+    top: 60px;
+    left: 179px;
+  }
+}

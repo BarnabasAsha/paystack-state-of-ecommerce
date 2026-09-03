@@ -13,6 +13,7 @@ export default function CommerceTimeline() {
   useEffect(() => {
     const timeline = timelineRef.current;
     if (!timeline) return;
+    if (window.innerWidth < 820) return;
 
     const updateGradient = () => {
       const timeline = timelineRef.current;
