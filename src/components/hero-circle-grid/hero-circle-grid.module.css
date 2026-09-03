@@ -1,0 +1,33 @@
+.hero-grid_wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  padding: 10px 36px;
+}
+
+.hero-grid_wrapper_grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), var(--cell-size));
+  gap: var(--gap);
+  justify-content: center;
+}
+
+.hero-grid_wrapper_grid_circle {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border-radius: 50%;
+  background: var(--commerce-pink);
+  opacity: 10%;
+  transition: background 0.2s ease;
+}
+
+.hero-grid_wrapper_grid_circle-active {
+  opacity: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-grid_wrapper {
+    padding: 10px 20px;
+  }
+}

@@ -1,6 +1,8 @@
 .header {
   width: 100%;
+  position: relative;
   padding: 30px 32px;
+  z-index: 5;
 }
 
 .header_container {

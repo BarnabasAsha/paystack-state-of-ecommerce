@@ -1,4 +1,5 @@
 import Header from "../header/header";
+import HeroCircleGrid from "../hero-circle-grid/hero-circle-grid";
 import styles from "./hero.module.css";
 
 export default function Hero() {
@@ -40,6 +41,7 @@ export default function Hero() {
           </div>
         </div>
       </section>
+      <HeroCircleGrid />
     </div>
   );
 }

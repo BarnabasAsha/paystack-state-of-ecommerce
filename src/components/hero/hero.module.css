@@ -3,14 +3,17 @@
   background: var(--commerce-wine);
   color: var(--commerce-cream);
   height: 100dvh;
+  position: relative;
 }
 
 .hero_section {
+  position: relative;
   width: 100%;
   height: calc(100dvh - 91px);
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 32px;
+  z-index: 6;
 }
 
 .hero_section_container {
@@ -72,6 +75,22 @@
   font-size: 1rem;
   line-height: 190%;
   letter-spacing: -1%;
+}
+
+@media screen and (min-width: 1920px) {
+  .hero_section {
+    max-width: 1750px;
+  }
+
+  .hero_section_container_content {
+    margin-top: 150px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .hero_section {
+    padding: 0 20x;
+  }
 }
 
 @media screen and (max-width: 768px) {
