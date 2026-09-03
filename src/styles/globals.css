@@ -14,6 +14,14 @@
   --commerce-orange-accent: #f7931e;
   --commerce-red-accent: #da512a;
   --commerce-green-accent: #3a6a72;
+
+  /* breakpoints */
+  --breakpoint-phone: 550px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-MDtablet: 820px;
+  --breakpoint-LGtablet: 1024px;
+  --breakpoint-desktop: 1366px;
+  --breakpoint-LGdesktop: 1920px;
 }
 
 body {
