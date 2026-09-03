@@ -1,0 +1,45 @@
+.timeline-dot {
+  position: fixed;
+  top: 20px;
+  left: 179px;
+}
+
+.timeline-dot_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-dot_one {
+  width: 18px;
+  height: 18px;
+  border: 0.5px solid var(--commerce-white);
+  border-radius: 100%;
+}
+
+.timeline-dot_two {
+  width: 12px;
+  height: 12px;
+  border: 0.75px solid var(--commerce-white);
+  border-radius: 100%;
+}
+
+.timeline-dot_three {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--commerce-white);
+  border-radius: 100%;
+}
+
+.timeline-dot_four {
+  width: 4px;
+  height: 4px;
+  background: var(--commerce-white);
+  border-radius: 100%;
+}
+
+.timeline-dot_five {
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+}
