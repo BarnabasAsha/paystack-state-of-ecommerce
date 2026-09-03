@@ -1,0 +1,21 @@
+@import "../assets/fonts/fonts.css";
+@import "./reset.css";
+
+:root {
+  --font-display: "Boing", sans-serif;
+  --font-body: "Graphik", Arial, sans-serif;
+  --commerce-cream: #f9f7f1;
+  --commerce-orange: #ffad00;
+  --commerce-red: #e9623b;
+  --commerce-green: #285056;
+  --commerce-purple: #786b9c;
+  --commerce-wine: #6b2e4b;
+  --commerce-pink: #e35b67;
+  --commerce-orange-accent: #f7931e;
+  --commerce-red-accent: #da512a;
+  --commerce-green-accent: #3a6a72;
+}
+
+body {
+  font-family: var(--font-body);
+}
