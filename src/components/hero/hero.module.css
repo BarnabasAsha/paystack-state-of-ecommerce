@@ -2,14 +2,14 @@
   width: 100%;
   background: var(--commerce-wine);
   color: var(--commerce-cream);
-  height: 100svh;
+  height: 100dvh;
   position: relative;
 }
 
 .hero_section {
   position: relative;
   width: 100%;
-  height: calc(100svh - 91px);
+  height: calc(100dvh - 91px);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;

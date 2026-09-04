@@ -1,7 +1,7 @@
 .commerce-timeline {
   position: relative;
   width: 100%;
-  height: 100svh;
+  height: 100dvh;
 }
 
 .commerce-timeline_container {
@@ -182,7 +182,7 @@
   }
 
   .commerce-timeline_container_rcol {
-    height: calc(100svh - var(--mobile-lcol-height, 80px));
+    height: calc(100dvh - var(--mobile-lcol-height, 80px));
     /* No bottom padding — vectors bottom-align flush, same as desktop. */
     padding: 30px 20px 0;
   }
