@@ -69,9 +69,6 @@
 }
 
 .contentFlushTopLeft {
-  /* Negative: this wrapper is shorter than the tallest one, and the
-     track bottom-aligns them all, so its own box starts well below the
-     true top — this reaches up past it. */
   top: -23%;
   left: 0;
   align-items: flex-start;
@@ -140,8 +137,6 @@
   text-align: center;
 }
 
-/* Declared last to win over the base rules. Vector uses accent color,
-   pills use base color — kept separate so neither overrides the other. */
 .themeOrange {
   color: var(--commerce-orange-accent);
 }
@@ -164,4 +159,21 @@
 
 .pillGreen {
   background: var(--commerce-green);
+}
+
+@media screen and (max-width: 820px) {
+  .vector svg {
+    width: auto;
+    height: auto;
+    max-height: 42vh;
+    max-width: calc(100vw - 40px);
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .line {
+    font-size: 12px;
+  }
 }

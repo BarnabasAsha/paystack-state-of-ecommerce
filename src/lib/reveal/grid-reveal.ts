@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-const COLUMN_STAGGER = 0.3;
+const COLUMN_STAGGER = 0.015;
 
 // Cells carry their real grid column via `data-col` rather than relying on
 // GSAP's `grid` stagger, which assumes a dense row-major array — the active
@@ -16,7 +16,7 @@ export function revealGridColumns(cells: Element[], reduced: boolean) {
   return gsap.from(cells, {
     autoAlpha: 0,
     scale: 0.4,
-    duration: 2,
+    duration: 0.5,
     ease: "power2.out",
     stagger: byColumn,
     immediateRender: true,
@@ -31,7 +31,7 @@ export function revealActiveCells(cells: Element[], reduced: boolean) {
   return gsap.from(cells, {
     autoAlpha: 0,
     scale: 0,
-    duration: 2.5,
+    duration: 0.6,
     ease: "back.out(2)",
     stagger: byColumn,
     immediateRender: true,
