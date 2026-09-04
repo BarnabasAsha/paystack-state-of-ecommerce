@@ -30,7 +30,7 @@ export default function Header() {
     setMenuOpen((it) => !it);
   };
   return (
-    <header className={styles.header}>
+    <header data-reveal="header" className={styles.header}>
       <div className={styles["header_container"]}>
         <Logo />
 
