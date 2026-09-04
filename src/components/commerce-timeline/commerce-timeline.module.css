@@ -120,6 +120,11 @@
 }
 
 @media screen and (max-width: 820px) {
+  .commerce-timeline {
+    min-height: 100lvh;
+    max-height: 100lvh;
+  }
+
   .commerce-timeline_container {
     flex-direction: column;
   }
@@ -176,7 +181,8 @@
   }
 
   .commerce-timeline_container_rcol {
-    height: calc(100dvh - var(--mobile-lcol-height, 80px));
+    min-height: calc(100lvh - var(--mobile-lcol-height, 80px));
+    max-height: calc(100lvh - var(--mobile-lcol-height, 80px));
 
     padding: 30px 20px 0;
   }

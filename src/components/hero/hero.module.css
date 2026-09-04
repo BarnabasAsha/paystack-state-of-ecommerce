@@ -94,6 +94,16 @@
 }
 
 @media screen and (max-width: 768px) {
+  .hero {
+    min-height: 100lvh;
+    max-height: 100lvh;
+  }
+
+  .hero_section {
+    min-height: calc(100lvh - 91px);
+    max-height: calc(100lvh - 91px);
+  }
+
   .hero_section_container_content {
     margin-top: 60px;
   }
