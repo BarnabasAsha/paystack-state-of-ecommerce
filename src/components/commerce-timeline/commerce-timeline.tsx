@@ -58,9 +58,7 @@ export default function CommerceTimeline() {
     () => window.innerWidth < 820,
   );
 
-  // Lets the sticky phase title's box match the viewport width (390px,
-  // say) instead of its own phase's full scrollable width — 100vw is an
-  // unreliable stand-in for that on some mobile browsers.
+  // Lets the sticky phase title's box match the viewport width
   useMirroredSize(
     timelineRef,
     sectionRef,
