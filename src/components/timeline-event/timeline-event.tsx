@@ -67,7 +67,7 @@ export default function TimelineEvent({
       data-phase-theme={theme}
       data-year-id={yearId}
     >
-      <div className={`${styles.vector} ${themeClassMap[theme]}`}>
+      <div className={`${styles.vector} ${themeClassMap[theme]}`} data-reveal-vector>
         {resolveVector(data.vector)}
       </div>
       <div
@@ -77,13 +77,17 @@ export default function TimelineEvent({
           contentPositionClassMap[data.contentPosition]
         }`}
       >
-        <h3 className={`${styles.title} ${pillClassMap[theme]}`}>
+        <h3
+          data-reveal-title
+          className={`${styles.title} ${pillClassMap[theme]}`}
+        >
           {data.title}
         </h3>
         <div className={styles.description}>
           {data.description.map((line, index) => (
             <span
               key={index}
+              data-reveal-line
               className={`${styles.line} ${pillClassMap[theme]}`}
             >
               {line}

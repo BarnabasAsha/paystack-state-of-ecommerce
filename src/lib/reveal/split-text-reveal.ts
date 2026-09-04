@@ -5,13 +5,6 @@ gsap.registerPlugin(SplitText);
 
 export type SplitTextVariant = "title" | "paragraph";
 
-/**
- * Reveals text via SplitText: titles split into chars (punchy pop-up, one
- * per char), paragraphs split into lines (gentler slide-up, one per line).
- * No-ops when `reduced` is true, leaving the plain text as CSS renders it.
- * `autoSplit` re-splits (and replays) on resize/font swap, so the caller
- * doesn't need to worry about layout changes invalidating the split.
- */
 export function splitTextReveal(
   element: HTMLElement | null,
   variant: SplitTextVariant,

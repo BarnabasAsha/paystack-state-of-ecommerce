@@ -28,3 +28,25 @@ export function slideReveal(
     immediateRender: true,
   });
 }
+
+export function staggerReveal(
+  elements: Element[],
+  {
+    fromY = 16,
+    duration = 0.5,
+    ease = "power3.out",
+    stagger = 0.06,
+  }: SlideRevealOptions & { stagger?: number } = {},
+  reduced = false,
+) {
+  if (elements.length === 0 || reduced) return null;
+
+  return gsap.from(elements, {
+    autoAlpha: 0,
+    y: fromY,
+    duration,
+    ease,
+    stagger,
+    immediateRender: true,
+  });
+}

@@ -17,6 +17,8 @@ import { useMirroredSize } from "@/hooks/use-mirrored-size";
 import { useCrossfadeText } from "@/hooks/use-crossfade-text";
 import { useActiveMarker } from "@/hooks/use-active-marker";
 import { useHorizontalScrubPin } from "@/hooks/use-horizontal-scrub-pin";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { useEventReveals } from "./use-event-reveals";
 import type { PhaseTheme } from "./types";
 import TimelineEvent from "../timeline-event/timeline-event";
 import TimelineDot from "../timeline-dot/timeline-dot";
@@ -49,6 +51,9 @@ export default function CommerceTimeline() {
     initialValue: commerceTimelineData[0]?.description,
     restOpacity: 0.3,
   });
+
+  const { prime: primeEventReveals, checkReveals: checkEventReveals } =
+    useEventReveals(useReducedMotion());
 
   useMirroredSize(
     timelineRef,
@@ -134,6 +139,8 @@ export default function CommerceTimeline() {
       );
       if (eventEls.length === 0) return;
 
+      primeEventReveals(eventEls);
+
       // Measured once, before any transform — stays valid since
       // translateX moves track and its children together.
       const trackOrigin = track.getBoundingClientRect();
@@ -174,6 +181,10 @@ export default function CommerceTimeline() {
       return () => {
         const rcolRect = rcol.getBoundingClientRect();
         const trackRectNow = track.getBoundingClientRect();
+
+        if (rcolRect.top < window.innerHeight && rcolRect.bottom > 0) {
+          checkEventReveals(eventEls, rcolRect);
+        }
 
         const atStart = Math.abs(trackRectNow.left - trackOrigin.left) < 1;
 
