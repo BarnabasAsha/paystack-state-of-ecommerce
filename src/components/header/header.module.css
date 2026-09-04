@@ -2,7 +2,10 @@
   width: 100%;
   position: relative;
   padding: 30px 32px;
-  z-index: 5;
+  /* Above hero_section's z-index (6) — header is its own stacking
+     context, so the mobile nav overlay's z-index only wins within it,
+     never against sibling sections, unless this is too. */
+  z-index: 20;
 }
 
 .header_container {

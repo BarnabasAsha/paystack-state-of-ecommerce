@@ -36,7 +36,6 @@
 
 .line {
   width: max-content;
-  border-radius: 6px;
   background: var(--commerce-orange);
   color: var(--commerce-cream);
   font-size: 0.9rem;
@@ -45,8 +44,42 @@
   padding: 4px 10px;
 }
 
+.line:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.line:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 .contentTopLeft {
   top: 8%;
+  left: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contentUpperLeft {
+  top: 28%;
+  left: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contentFlushTopLeft {
+  /* Negative: this wrapper is shorter than the tallest one, and the
+     track bottom-aligns them all, so its own box starts well below the
+     true top — this reaches up past it. */
+  top: -23%;
+  left: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contentHighLeft {
+  top: 0%;
   left: 0;
   align-items: flex-start;
   text-align: left;
@@ -76,6 +109,14 @@
   text-align: left;
 }
 
+.contentLowerLeft {
+  top: 60%;
+  left: 0;
+  transform: translateY(-50%);
+  align-items: flex-start;
+  text-align: left;
+}
+
 .contentCenter {
   top: 50%;
   left: 50%;
@@ -97,4 +138,30 @@
   transform: translateX(-50%);
   align-items: center;
   text-align: center;
+}
+
+/* Declared last to win over the base rules. Vector uses accent color,
+   pills use base color — kept separate so neither overrides the other. */
+.themeOrange {
+  color: var(--commerce-orange-accent);
+}
+
+.themeRed {
+  color: var(--commerce-red-accent);
+}
+
+.themeGreen {
+  color: var(--commerce-green-accent);
+}
+
+.pillOrange {
+  background: var(--commerce-orange);
+}
+
+.pillRed {
+  background: var(--commerce-red);
+}
+
+.pillGreen {
+  background: var(--commerce-green);
 }

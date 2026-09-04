@@ -70,13 +70,17 @@
   text-align: center;
 }
 
+.commerce-timeline_container_lcol_wrapper_list_item-active {
+  opacity: 100%;
+  font-weight: 500;
+}
+
 .commerce-timeline_container_rcol {
   width: 100%;
   background: var(--commerce-orange);
   color: var(--commerce-cream);
   display: flex;
-  overflow-x: auto;
-
+  overflow-x: hidden;
   flex-direction: column;
   justify-content: space-between;
   padding: 4rem 4rem 0rem 4rem;
@@ -93,9 +97,10 @@
 
 .commerce-timeline_container_rcol_track {
   display: flex;
-  column-gap: 10rem;
-
+  column-gap: 5rem;
   align-items: end;
+  width: max-content;
+  flex-shrink: 0;
 }
 
 .commerce-timeline_sources {
@@ -126,6 +131,16 @@
     flex-direction: row;
     border-right: none;
     background: var(--commerce-orange);
+    /* Scroll position is driven programmatically, synced to the dot. */
+    scrollbar-width: none;
+  }
+
+  .commerce-timeline_container_lcol::-webkit-scrollbar {
+    display: none;
+  }
+
+  .commerce-timeline_container_rcol_track {
+    column-gap: 2rem;
   }
 
   .commerce-timeline_container_lcol_wrapper {
@@ -138,11 +153,26 @@
 
   .commerce-timeline_container_lcol_wrapper_title {
     border: none;
+    /* Stays centered in the viewport as its phase scrolls past, instead
+       of centering within the whole (wider) phase block. */
+    position: sticky;
+    left: 0;
+    width: var(--mobile-lcol-width, 100vw);
   }
 
   .commerce-timeline_container_lcol_wrapper_title h5 {
     writing-mode: horizontal-tb;
     transform: rotate(0deg);
+  }
+
+  .commerce-timeline_container_lcol_wrapper_list_item {
+    /* Reserve 2-line height always — bold vs regular wraps differently
+       at 99px wide, which was shifting lcol's (and rcol's) height as
+       the active year changed. */
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .commerce-timeline_container_lcol_wrapper_list {
@@ -153,7 +183,8 @@
 
   .commerce-timeline_container_rcol {
     height: calc(100dvh - var(--mobile-lcol-height, 80px));
-    padding: 30px 20px;
+    /* No bottom padding — vectors bottom-align flush, same as desktop. */
+    padding: 30px 20px 0;
   }
 
   .commerce-timeline_container_rcol_title {
