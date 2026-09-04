@@ -18,6 +18,7 @@ export function useHorizontalScrubPin({
   trackRef,
   overflowSelector,
   trailingSpaceRatio = 0,
+  scrollDistanceRatio = 1,
   setup,
 }: {
   triggerRef: RefObject<HTMLElement | null>;
@@ -25,6 +26,9 @@ export function useHorizontalScrubPin({
   trackRef: RefObject<HTMLElement | null>;
   overflowSelector?: string;
   trailingSpaceRatio?: number;
+  // >1 stretches the vertical scroll distance needed to cover the track,
+  // slowing the horizontal scrub relative to scroll input.
+  scrollDistanceRatio?: number;
   setup: () => (() => void) | undefined;
 }) {
   useGSAP(
@@ -58,7 +62,7 @@ export function useHorizontalScrubPin({
         scrollTrigger: {
           trigger,
           start: "top top",
-          end: () => `+=${maxX()}`,
+          end: () => `+=${maxX() * scrollDistanceRatio}`,
           pin: true,
           scrub: true,
           invalidateOnRefresh: true,

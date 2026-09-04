@@ -89,7 +89,7 @@
 .commerce-timeline_container_rcol_title {
   font-size: 3rem;
   font-weight: 400;
-  opacity: 30%;
+  opacity: 75%;
   line-height: 120%;
   letter-spacing: -4%;
   max-width: 683px;
@@ -183,14 +183,14 @@
 
   .commerce-timeline_container_rcol {
     height: calc(100dvh - var(--mobile-lcol-height, 80px));
-    /* No bottom padding — vectors bottom-align flush, same as desktop. */
+
     padding: 30px 20px 0;
   }
 
   .commerce-timeline_container_rcol_title {
     font-size: 2rem;
     font-weight: 400;
-    opacity: 30%;
+    opacity: 75%;
     line-height: 100%;
     letter-spacing: -4%;
   }

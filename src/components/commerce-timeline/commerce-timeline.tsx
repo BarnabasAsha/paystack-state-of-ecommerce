@@ -28,6 +28,7 @@ const LCOL_TRANSITION_SIZE = 1.1; // desktop wash
 const INVIEW_TRANSITION_SIZE = 10; // dynamic rcol/mobile-lcol blend
 
 const TRAILING_SPACE_RATIO = 0.2;
+const SCROLL_DISTANCE_RATIO = 1.25;
 
 const DOT_INSET = 14;
 
@@ -127,6 +128,7 @@ export default function CommerceTimeline() {
     trackRef,
     overflowSelector: "[data-event-content]",
     trailingSpaceRatio: TRAILING_SPACE_RATIO,
+    scrollDistanceRatio: SCROLL_DISTANCE_RATIO,
     setup: () => {
       const section = sectionRef.current;
       const rcol = rcolRef.current;
