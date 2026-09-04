@@ -59,6 +59,7 @@ export default function HeroCircleGrid() {
               key={index}
               data-grid-cell
               data-col={col}
+              data-row={row}
               data-active={active || undefined}
               className={`${styles["hero-grid_wrapper_grid_circle"]} ${
                 active

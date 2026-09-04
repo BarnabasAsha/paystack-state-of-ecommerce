@@ -49,7 +49,7 @@ export function useTimelineEndReveal() {
         const tl = gsap.timeline();
         tl.call(() => revealSplit(eyebrow, "paragraph"));
         tl.call(() => revealSplit(description, "paragraph"), [], "<0.3");
-        tl.call(() => buttonTween?.play(), [], "<0.9");
+        tl.call(() => buttonTween?.play(), [], "<0.5");
       };
 
       const trigger = ScrollTrigger.create({

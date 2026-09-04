@@ -89,7 +89,7 @@
 .commerce-timeline_container_rcol_title {
   font-size: 3rem;
   font-weight: 400;
-  opacity: 75%;
+  opacity: 60%;
   line-height: 120%;
   letter-spacing: -4%;
   max-width: 683px;
@@ -131,7 +131,6 @@
     flex-direction: row;
     border-right: none;
     background: var(--commerce-orange);
-    /* Scroll position is driven programmatically, synced to the dot. */
     scrollbar-width: none;
   }
 
@@ -153,8 +152,6 @@
 
   .commerce-timeline_container_lcol_wrapper_title {
     border: none;
-    /* Stays centered in the viewport as its phase scrolls past, instead
-       of centering within the whole (wider) phase block. */
     position: sticky;
     left: 0;
     width: var(--mobile-lcol-width, 100vw);
@@ -166,9 +163,6 @@
   }
 
   .commerce-timeline_container_lcol_wrapper_list_item {
-    /* Reserve 2-line height always — bold vs regular wraps differently
-       at 99px wide, which was shifting lcol's (and rcol's) height as
-       the active year changed. */
     min-height: 36px;
     display: flex;
     align-items: center;
@@ -190,7 +184,7 @@
   .commerce-timeline_container_rcol_title {
     font-size: 2rem;
     font-weight: 400;
-    opacity: 75%;
+    opacity: 60%;
     line-height: 100%;
     letter-spacing: -4%;
   }

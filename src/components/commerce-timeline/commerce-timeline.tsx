@@ -50,7 +50,7 @@ export default function CommerceTimeline() {
 
   const setPhaseTitle = useCrossfadeText(titleRef, {
     initialValue: commerceTimelineData[0]?.description,
-    restOpacity: 0.3,
+    restOpacity: 0.6,
   });
 
   const { prime: primeEventReveals, checkReveals: checkEventReveals } =
