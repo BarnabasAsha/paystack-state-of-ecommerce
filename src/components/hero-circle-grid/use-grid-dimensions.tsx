@@ -16,9 +16,15 @@ export function useGridDimensions(cellSize: number, gap: number = 0) {
       });
 
     // Synchronous, ahead of the async ResizeObserver callback below — cuts
-    // down the window where the grid renders with zero cells.
+    // down the window where the grid renders with zero cells. Matches the
+    // observer's content-box measurement (padding excluded), or a mismatch
+    // between the two would change the cell count a moment later, remounting
+    // cells mid-reveal and leaving some of them stuck hidden.
+    const style = getComputedStyle(el);
+    const paddingX = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+    const paddingY = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
     const rect = el.getBoundingClientRect();
-    measure(rect.width, rect.height);
+    measure(rect.width - paddingX, rect.height - paddingY);
 
     const observer = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
